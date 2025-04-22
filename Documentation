@@ -1,0 +1,19 @@
+Documentation pour la création d'un compte GitHub
+Création d'un compte GitHub
+1. Inscrivez-vous : Rendez-vous sur github.com et cliquez sur "Sign up" ou "S'inscrire".
+2. Remplissez le formulaire :
+- Email : Entrez votre adresse email.
+- Mot de passe : Choisissez un mot de passe sécurisé.
+- Nom d'utilisateur : Sélectionnez un nom d'utilisateur unique.
+3. Validation : Suivez les instructions pour vérifier votre compte via l'email de confirmation.
+
+Création d'un projet sur GitHub
+1. Connectez-vous à votre compte GitHub.
+2. Cliquez sur "+" en haut à droite de la page d'accueil.
+3. Sélectionnez "New repository" (Nouveau dépôt).
+4. Paramétrez votre dépôt:
+- Nom du dépôt : Donnez un nom à votre projet.
+- Description (optionnel) : Ajoutez une brève description.
+- Public/Privé : Choisissez la visibilité de votre dépôt.
+- Initialiser avec un README : Cochez cette option pour créer un fichier README par défaut.
+5. Ajoutez une licence (optionnel) : Sélectionnez une licence pour votre projet, comme la GPL v2.
