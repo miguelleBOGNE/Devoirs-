@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Générateur de Checklist </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    #taskInput {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #addTaskBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+    li input[type="checkbox"] {
+      margin-right: 15px;
+    }
+    .delete-btn {
+      margin-left: auto;
+      color: red;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #printBtn {
+      margin-top: 20px;
+      padding: 10px 30px;
+      font-size: 16px;
+    }
+
+    @media print {
+      #controls {
+        display: none;
+      }
+      body {
+        background: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Checklist de Commandes</h1>
+
+  <div id="controls">
+    <input type="text" id="taskInput" placeholder="Ajouter une tâche ">
+    <button id="addTaskBtn">Ajouter</button>
+    <button id="printBtn">Imprimer</button>
+  </div>
+
+  <ul id="taskList">
+    
+  </ul>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const printBtn = document.getElementById("printBtn");
+
+    addTaskBtn.addEventListener("click", addTask);
+    taskInput.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") addTask();
+    });
+
+    function addTask() {
+      const taskText = taskInput.value.trim();
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <input type="checkbox">
+        <span>${taskText}</span>
+        <span class="delete-btn" onclick="this.parentElement.remove()">×</span>
+      `;
+      taskList.appendChild(li);
+      taskInput.value = "";
+    }
+
+    printBtn.addEventListener("click", () => window.print());
+  </script>
+</body>
+</html>
